@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  background: linear-gradient(180deg,#0f1b2e,#0a58ca);
+  color: #fff;
+  font-family: 'SF Pro Display', sans-serif;
+  transition: background .5s;
+}
+
+/* --- LOGIN --- */
+.login-body {
+  display:flex;justify-content:center;align-items:center;height:100vh;
+}
+.login-container {
+  background:rgba(15,27,46,.85);
+  padding:30px;border-radius:25px;text-align:center;width:300px;
+  box-shadow:0 0 20px rgba(10,88,202,.6);
+}
+.logo{margin-bottom:20px;font-size:2em;}
+.login-btn{
+  width:100%;padding:12px;margin:8px 0;
+  border:none;border-radius:25px;font-size:16px;
+  background:#0a58ca;color:#fff;box-shadow:0 4px 10px rgba(10,88,202,.5);
+  cursor:pointer;transition:.3s;
+}
+.login-btn:hover{background:#3c7ef3;}
+.login-btn.google{background:#1a73e8;}
+
+/* --- APP --- */
+section{display:none;padding:20px;min-height:calc(100vh - 80px);}
+section.active{display:block;}
+.hidden{display:none;}
+header{position:relative;}
+.install-btn{
+  position:absolute;right:10px;top:10px;background:#0a58ca;color:#fff;
+  border:none;border-radius:20px;padding:8px 14px;cursor:pointer;
+}
+
+.search-bar{
+  display:flex;background:#1a2b3c;border-radius:20px;padding:8px;
+}
+.search-bar input{
+  flex:1;background:transparent;border:none;color:#fff;
+  font-size:16px;outline:none;
+}
+.search-bar button{
+  background:#0a58ca;border:none;border-radius:50%;
+  width:40px;height:40px;color:white;
+}
+
+.grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:10px;margin:10px 0;
+}
+.cat{
+  background:#1a2b3c;text-align:center;padding:10px;border-radius:20px;
+  cursor:pointer;box-shadow:0 3px 6px rgba(0,0,0,.3);
+}
+.cat:hover{background:#0a58ca;}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:20px;
+}
+.card{
+  background:#1a2b3c;border-radius:20px;overflow:hidden;cursor:pointer;
+  transition:transform .2s,box-shadow .2s;
+  box-shadow:0 0 8px rgba(0,0,0,.3);
+}
+.card:hover{transform:scale(1.05);box-shadow:0 0 15px rgba(10,88,202,.7);}
+.card img{width:100%;height:250px;object-fit:cover;}
+
+.bottom-nav{
+  position:fixed;bottom:0;left:0;right:0;height:80px;background:#0d1524;
+  display:flex;justify-content:space-around;align-items:center;
+  box-shadow:0 -2px 10px rgba(0,0,0,.5);
+}
+.bottom-nav button{
+  background:none;border:none;color:#99a1b3;
+  display:flex;flex-direction:column;align-items:center;
+}
+.bottom-nav button.active{color:#fff;}
+
+.settings{
+  display:flex;flex-direction:column;gap:15px;margin-top:20px;
+}
+.settings button{
+  background:#1a2b3c;color:#fff;border:none;padding:12px;
+  border-radius:15px;font-size:16px;cursor:pointer;
+  box-shadow:0 2px 6px rgba(0,0,0,.4);
+}
+.settings button:hover{background:#0a58ca;}
+
+/* Switch */
+.switch{display:flex;align-items:center;gap:10px;cursor:pointer;}
+.switch input{display:none;}
+.switch span{
+  width:40px;height:22px;background:#555;border-radius:20px;position:relative;
+  transition:.3s;
+}
+.switch span::before{
+  content:"";position:absolute;width:18px;height:18px;border-radius:50%;
+  background:white;top:2px;left:2px;transition:.3s;
+}
+.switch input:checked+span{background:#0a58ca;}
+.switch input:checked+span::before{left:20px;}
+
+/* Detalle */
+.detalle-fondo{
+  position:absolute;top:0;left:0;right:0;bottom:0;
+  background-size:cover;background-position:center;
+  filter:blur(15px) brightness(.4);z-index:-1;
+}
+.detalle-info{padding:40px;}
+.detalle-info h2{font-size:2em;margin-bottom:10px;}
+.detalle-info p{max-width:600px;line-height:1.4;}
+
+/* Player */
+#playerModal{
+  position:fixed;top:0;left:0;right:0;bottom:0;
+  background:rgba(0,0,0,.95);
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  transition:opacity .3s;
+}
+#player{width:90%;max-height:70vh;border-radius:10px;}
+.player-time{
+  color:#0a58ca;margin-top:5px;font-weight:bold;text-shadow:0 0 6px black;
+}
+#closePlayer{
+  margin-top:10px;background:#0a58ca;border:none;padding:10px 20px;
+  border-radius:20px;color:white;cursor:pointer;
+}
