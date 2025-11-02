@@ -1,0 +1,9 @@
+{
+  "name": "Modo Cine",
+  "short_name": "ModoCine",
+  "start_url": "login.html",
+  "display": "standalone",
+  "background_color": "#0f1b2e",
+  "theme_color": "#0a58ca",
+  "icons": []
+}
