@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Modo Cine</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body>
+  <div id="app">
+    <!-- 🔍 BUSCAR -->
+    <section id="buscar" class="active">
+      <header>
+        <h1>Buscar</h1>
+        <button id="installBtn" class="install-btn">📲 Instalar</button>
+      </header>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Buscar película..." />
+        <button id="searchBtn">🔍</button>
+      </div>
+
+      <h2>Categorías</h2>
+      <div class="grid" id="categorias">
+        <div class="cat" data-genre="28">Acción</div>
+        <div class="cat" data-genre="35">Comedia</div>
+        <div class="cat" data-genre="18">Drama</div>
+        <div class="cat" data-genre="27">Terror</div>
+        <div class="cat" data-genre="16">Animación</div>
+        <div class="cat" data-genre="10749">Romance</div>
+      </div>
+
+      <div id="resultados" class="cards"></div>
+    </section>
+
+    <!-- 🎬 DETALLE DE PELÍCULA -->
+    <section id="detalle" class="hidden">
+      <div id="detalleFondo" class="detalle-fondo"></div>
+      <div class="detalle-info">
+        <h2 id="detalleTitulo"></h2>
+        <p id="detalleDescripcion"></p>
+        <button id="verAhora" class="login-btn">🎬 Ver ahora</button>
+      </div>
+    </section>
+
+    <!-- 🎬 BIBLIOTECA -->
+    <section id="biblioteca">
+      <header><h1>Biblioteca</h1></header>
+      <div id="libraryList" class="cards"></div>
+    </section>
+
+    <!-- 📱 APPS -->
+    <section id="apps">
+      <header><h1>Apps</h1></header>
+      <div id="appsList" class="cards"></div>
+    </section>
+
+    <!-- ⚙️ CONFIGURACIÓN -->
+    <section id="config">
+      <header><h1>Configuración</h1></header>
+      <div class="settings">
+        <label class="switch"><input type="checkbox" id="darkMode"><span></span> Tema oscuro</label>
+        <label class="switch"><input type="checkbox" id="dataSaver"><span></span> Ahorro de datos</label>
+        <button id="logout">🚪 Cerrar sesión</button>
+      </div>
+    </section>
+
+    <!-- 🎥 PLAYER -->
+    <div id="playerModal" class="hidden">
+      <video id="player" controls></video>
+      <div class="player-time" id="playerTime">00:00 / 00:00</div>
+      <button id="closePlayer">✕</button>
+    </div>
+
+    <!-- 🧭 NAVEGACIÓN -->
+    <nav class="bottom-nav">
+      <button data-tab="buscar" class="active">🔍<span>Buscar</span></button>
+      <button data-tab="biblioteca">🎬<span>Biblioteca</span></button>
+      <button data-tab="apps">📱<span>Apps</span></button>
+      <button data-tab="config">⚙️<span>Config</span></button>
+    </nav>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
